@@ -14,36 +14,65 @@
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Home</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    
-    <li class="nav-item">
-      <a class="nav-link" href="#">Products</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-link" href="#">Admins</a>
-    </li>
-      </ul>
-      <span class="navbar-text">
-        User Name
-      </span>
-    </div>
+    <a class="navbar-brand" href="add.html">Add New data</a>
+
+    <ul class="nav justify-content-center">
+      <h3 style="color: white;">List of Users from database.</h3>
+    </ul>
+
+    <p> </p>
+   
   </div>
 </nav>
 
 <div class="container">
-            <div class="row">
-                <div class="col-lg-12 bg-light text-center">
-                    <h1>Welcome To the System</h1>
-                    <h2>We will learn a lot from this project.</h2>
-                </div>
-            </div>
-        </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>
+            <a href="#"> <button class="btn btn-primary">Edit</button> </a>
+            ||
+            <a href="#"> <button class="btn btn-danger">Delete</button> </a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+          <td>
+            <a href="#"> <button class="btn btn-primary">Edit</button> </a>
+            ||
+            <a href="#"> <button class="btn btn-danger">Delete</button> </a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+          <td>
+            <a href="#"> <button class="btn btn-primary">Edit</button> </a>
+            ||
+            <a href="#"> <button class="btn btn-danger">Delete</button> </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 
 

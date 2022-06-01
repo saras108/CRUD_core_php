@@ -1,3 +1,12 @@
+<?php
+//including the database connection file
+include_once("config.php");
+
+//fetching data in descending order (lastest entry first)
+//$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
+$result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC"); // using mysqli_query instead
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,10 +35,10 @@
 </nav>
 
 <div class="container">
+    
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
           <th scope="col">Name</th>
           <th scope="col">Age</th>
           <th scope="col">E-mail</th>
@@ -37,47 +46,34 @@
         </tr>
       </thead>
       <tbody>
+        
+    <?php 
+	//while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
+	while($res = mysqli_fetch_array($result)) { 
+    
+    ?>
+
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>
-            <a href="#"> <button class="btn btn-primary">Edit</button> </a>
-            ||
-            <a href="#"> <button class="btn btn-danger">Delete</button> </a>
-          </td>
+          <td><?php echo $res['name'] ?></td>
+          <td><?php echo $res['age'] ?></td>
+          <td><?php echo $res['email'] ?></td>
+          <?php 
+           echo
+           "<td>
+            <a href=\"edit.php?id=$res[id]\">Edit</a> 
+            |
+            <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
+           </td>";		
+    
+          ?>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>
-            <a href="#"> <button class="btn btn-primary">Edit</button> </a>
-            ||
-            <a href="#"> <button class="btn btn-danger">Delete</button> </a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-          <td>
-            <a href="#"> <button class="btn btn-primary">Edit</button> </a>
-            ||
-            <a href="#"> <button class="btn btn-danger">Delete</button> </a>
-          </td>
-        </tr>
+
+        
+ <?php } ?>
+
       </tbody>
     </table>
   </div>
-
-
-
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 

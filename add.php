@@ -45,6 +45,7 @@ if(isset($_POST['Submit'])) {
 		echo "<p class='p-3 mb-2 bg-success text-white'>Data Successfully Saved.</p>";
 		
         echo "<a href='index.php'><button type='button' class='btn btn-Primary btn-lg btn-block'>View Result</button> </a>";
+		// header("Location:index.php");
 
 	}
 }

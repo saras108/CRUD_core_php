@@ -51,33 +51,53 @@ while($res = mysqli_fetch_array($result))
 <html>
 <head>	
     
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>CRUD</title>
 
 </head>
 
 <body>
-	<a href="index.php">Home</a>
-	<hr>
-	
-	<form name="form1" method="Post" action="edit.php">
-		<table>
-			<tr> 
-				<td>Name</td>
-				<td><input type="text" name="name" value="<?php echo $name;?>"></td>
-			</tr>
-			<tr> 
-				<td>Age</td>
-				<td><input type="text" name="age" value="<?php echo $age;?>"></td>
-			</tr>
-			<tr> 
-				<td>Email</td>
-				<td><input type="text" name="email" value="<?php echo $email;?>"></td>
-			</tr>
-			<tr>
-				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-				<td><input type="submit" name="update" value="Update"></td>
-			</tr>
-		</table>
-	</form>
+        <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.php">View all Records</a>
+      
+          <ul class="nav justify-content-center">
+            <h3 style="color: white;">Edit Data</h3>
+          </ul>
+      
+          <p> </p>
+         
+        </div>
+      </nav>
+
+	  
+	  <div class="container">
+      <form action="edit.php" method="Post" name="form1">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" value="<?php echo $name;?>"  placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" name="age" value="<?php echo $age;?>"  placeholder="Enter Your Age">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" class="form-control" id="email" name="email" value="<?php echo $email;?>" placeholder="Enter Your E-mail">
+        </div>
+
+		<input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+<br>
+        <button type="Submit" name="update" value="Update" class="btn btn-primary">Submit</button>
+        
+      </form>
+    </div>
 </body>
 </html>

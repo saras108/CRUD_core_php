@@ -66,6 +66,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC"); // usin
            </td>";		
     
           ?>
+          <a href="" style="color: red;"></a>
         </tr>
 
         
